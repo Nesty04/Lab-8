@@ -17,7 +17,7 @@ def image_resizing():
 
 def point_detecting():
     cap = cv2.VideoCapture("sample.mp4")
-    while (cv2.waitKey(1) != 27):
+    while cv2.waitKey(1) != 27:
         ret, image = cap.read()
         if not ret:
             break
@@ -41,7 +41,7 @@ def side_counting():
     global left
     global right
     cap = cv2.VideoCapture("sample.mp4")
-    while (cv2.waitKey(1) != 27):
+    while cv2.waitKey(1) != 27:
         ret, image = cap.read()
         if not ret:
             break
@@ -102,7 +102,7 @@ def fly_detecting():
         b = y + (h // 2)
         #print(a, b)
         fly = cv2.imread("fly64.png")
-        fly = cv2.resize(fly,(64, 64))
+        fly = cv2.resize(fly, (64, 64))
         for i in range(64):
             for j in range(64):
                 dx = (a - 32 + j)
